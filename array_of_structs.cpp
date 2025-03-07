@@ -14,11 +14,11 @@ struct TemperatureRecord {
 const int MAX_DAYS = 31;
 
 // Function Prototypes
-void readTemperatures(???); // TODO: Fix the parameters
-void printTemperatures(const ???);
-TemperatureRecord findMin(const ???);
-TemperatureRecord findMax(const ???);
-double findAverage(const ???);
+void readTemperatures(TemperatureRecord arr[], int& size); // TODO: Fix the parameters
+void printTemperatures(const TemperatureRecord arr[], int size);
+//TemperatureRecord findMin(const ???);
+//TemperatureRecord findMax(const ???);
+double findAverage(const TemperatureRecord arr[], int size);
 
 int main() {
     // TODO: Step 2 - Declare an array of TemperatureRecord structs (MAX_DAYS size)
@@ -28,12 +28,14 @@ int main() {
 
     // TODO: Step 3 - Call readTemperatures() to load data from file
     readTemperatures(temperatures, size);
+
+    // TODO: Step 4 - Print the temperatures
     cout << "Data Read from File:\n";
     printTemperatures(temperatures, size);
-    // TODO: Step 4 - Print the temperatures
 
     // TODO: Step 5 - Compute and display min, max, and average temperature
-
+    double averageTemp = findAverage(temperatures, size);
+    cout << "Average Temperature: " << averageTemp << "°F" << endl;
     return 0;
 }
 
@@ -72,3 +74,11 @@ void printTemperatures(const TemperatureRecord arr[], int size) {
 
 // TODO: Step 10 - Implement findAverage()
 // Compute and return the average temperature
+// Function to calculate average temperature
+double findAverage(const TemperatureRecord arr[], int size) {
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i].temperature;
+    }
+    return static_cast<double>(sum) / size;
+}
