@@ -1,3 +1,5 @@
+// Simon Sultana
+// Week 8 CSCI-40
 #include <iostream>
 #include <fstream>
 using namespace std;
