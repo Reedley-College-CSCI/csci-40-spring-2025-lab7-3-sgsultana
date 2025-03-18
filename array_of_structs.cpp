@@ -1,5 +1,6 @@
 // Simon Sultana
 // Week 8 CSCI-40
+// This is Part 3 of Lab 7
 #include <iostream>
 #include <fstream>
 using namespace std;
